@@ -5,16 +5,17 @@
 }
 
 header {
-    background-color: orange;
+    background-color: #e96900a1;
     padding-top: 10px;
     padding-bottom: 10px;
+    top: 1;
 
 
 }
 
 
 body {
-    background-color: rgba(233, 221, 171, 0.788)
+    background-color: #eedb8ea2
 }
 
 .navbar {
@@ -23,7 +24,10 @@ body {
     background-color: rgb(240, 238, 236);
     border-radius: 10px;
     width: 500px;
+    height: 62px;
     margin: auto;
+    position: sticky;
+    top: 1;
 
 }
 
@@ -31,23 +35,19 @@ body {
     display: flex;
     list-style: none;
     justify-content: center;
-    top: 1px;
+
 
 
 
 }
 
 
-
-
-
-
 .navbar li {
 
     text-align: left;
-    display: inline-block;
-    margin: 0.75rem;
-    padding: auto;
+    display: flex;
+    margin: 0.7rem;
+    padding: 0;
 
 
 
@@ -60,6 +60,7 @@ body {
     display: flex;
     align-items: center;
     top: 1px;
+    font-size: medium;
 
 
 }
@@ -99,16 +100,21 @@ h1 {
 }
 
 /*pagina principal*/
-.tamano{
-width: 30%;
-height: 30%;
-margin: auto;
-}
-
-.carousel{
+.tamano {
+    width: 30%;
+    height: 30%;
     margin: auto;
+}
+
+.carousel {
+    margin: auto;
+    width: 100%;
+    padding-bottom: 50px;
+    position: relative;
+
 
 }
+
 .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -117,26 +123,17 @@ margin: auto;
 
 }
 
-.videos {
-    width: 60vw;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-    margin: auto;
-
-}
 
 .flex-center {
 
     display: grid;
-    grid-template-columns: 0.5fr 2fr;
+    grid-template-columns: 0.5fr 1fr;
     align-items: center;
     border-color: black;
     padding-top: 20px;
     padding-bottom: 20px;
-
-
+    background-color: #eb9c41d2;
+    border-radius: 5%
 }
 
 
@@ -159,9 +156,12 @@ h2 {
 .fotos-muestra {
     width: 380px;
     height: 380px;
-    border: 2px;
-    padding-top: 10px;
-    display: flex
+    border: 4px;
+    display: flex;
+    border-color: #ff3c00cb;
+    border-style: ridge;
+    border-radius: 10%;
+    margin: 10px;
 }
 
 p {
@@ -170,6 +170,7 @@ p {
     padding: 10px;
     margin: 5px;
     line-height: 1.5;
+    display: flex;
 }
 
 .ventas {
@@ -177,6 +178,8 @@ p {
     justify-content: center;
     margin: 0 auto;
     flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 10px;
 
 
 
@@ -185,13 +188,45 @@ p {
 .ventas img {
     width: 400px;
     height: 400px;
-    margin: 30px;
-    padding: 20px;
+    margin: 0px;
+    padding: px;
+
 
 }
 
+.producto {
+    object-fit: cover;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background-color: #00ffbf4b;
+    width: 100%;
+    height: 1%;
+    overflow: hidden;
+    transition: 1s ease;
 
 
+}
+
+.overlay h2 {
+    font-size: 30px;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    left: 20px;
+
+
+
+}
+
+.producto:hover .overlay {
+    height: 100%;
+    cursor: pointer;
+}
 
 /*footer edit*/
 
@@ -202,6 +237,7 @@ footer {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 3;
+    margin-top: 20px;
 
 
 
@@ -230,4 +266,44 @@ iframe {
     width: 100%;
     height: 50%;
     padding: 15px;
+}
+
+@media screen and (max-width:768px) {
+    .container {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+    }
+
+    .flex-center {
+
+        grid-template-columns: 1fr;
+        align-items: center;
+        padding-left: 10%;
+
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding-left: auto;
+
+
+    }
+
+    .flex-center {
+        padding-left: 5%;
+    }
+    
+    .navbar{
+        width: 100%;
+        
+    }
+    
+
 }
