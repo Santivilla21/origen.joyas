@@ -1,0 +1,203 @@
+main {
+    .carousel {
+        margin: auto;
+        width: 100%;
+        padding-bottom: 50px;
+        position: relative;
+        display: flex;
+
+
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 5%;
+
+
+
+
+
+    }
+
+    .flex-center {
+
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        align-items: center;
+        border-color: black;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #eb9c41d2;
+        border-radius: 5%;
+
+
+    }
+
+    p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 24px;
+        display: block;
+        padding-top: 15px;
+    }
+
+    .fotos-muestra {
+        width: 380px;
+        height: 380px;
+        border: 4px;
+        display: flex;
+        border-color: #ff3c00cb;
+        border-style: ridge;
+        border-radius: 10%;
+        margin: 10px;
+    }
+
+    p {
+        font: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        padding: 10px;
+        margin: 5px;
+        line-height: 1.5;
+        display: flex;
+    }
+
+    .ventas {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-top: 10px;
+
+        img {
+            width: 400px;
+            height: 400px;
+            margin: 0px;
+            z-index: 0;
+
+
+        }
+
+
+    }
+
+    .producto {
+        object-fit: cover;
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        background-color: #00ffbf4b;
+        width: 100%;
+        height: 1%;
+        overflow: hidden;
+        transition: 1s ease;
+
+
+    }
+
+    .overlay h2 {
+        font-size: 30px;
+        position: absolute;
+        top: 30%;
+        text-align: center;
+        left: 20px;
+
+
+
+    }
+
+    .producto:hover .overlay {
+        height: 100%;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width:768px) {
+        
+        .container {
+
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+
+        }
+
+        .flex-center {
+
+            grid-template-columns: 1fr;
+            align-items: center;
+            padding-left: 0%;
+            border-radius: 0%;
+            width: 1fr;
+
+        }
+        .fotos-muestra {
+            width: 1fr;
+            height: 380px;
+            border: 4px;
+            display: flex;
+            border-color: $primario ;
+            border-style: ridge;
+            border-radius: 10%;
+            margin: auto
+        }
+        .ventas {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-top: 10px;
+    
+            img {
+                width: 250px;
+                height: 250px;
+                align-items: center;
+                position: static;
+                
+    
+    
+            }
+            p{
+                margin: auto;
+            }
+    
+    
+        }
+
+    }
+
+    @media screen and (max-width: 480px) {
+        .container {
+            padding-left: auto;
+        }
+
+        .flex-center {
+            padding-left: 5%;
+        }
+        
+        .flex-center {
+
+            grid-template-columns: 1fr;
+            align-items: center;
+            padding-left: 0%;
+            border-radius: 0%;
+            width: 1fr;
+
+        }
+        .fotos-muestra {
+            width: 1fr;
+            height: 380px;
+            border: 4px;
+            display: flex;
+            border-color: $primario ;
+            border-style: ridge;
+            border-radius: 10%;
+            margin: auto
+        }
+
+
+    }
+}

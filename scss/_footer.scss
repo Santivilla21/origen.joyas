@@ -1,0 +1,56 @@
+footer {
+    background-color: brown;   
+    margin-top: 10px;
+    
+    .pie-de-pagina{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    .foot{
+          
+        padding: 10px;
+        
+    
+    }
+
+    a:hover {
+        color: aliceblue;
+
+    }
+
+    img {
+        border-radius: 50%;
+        width: 5vw;
+        border-style: ridge;
+        border-color: $primario;
+        
+    }
+    a{
+        
+        justify-content: center;
+        display: flex;
+    }
+    ul{
+        display: block;
+        justify-content: center;
+        align-items: center;
+        list-style:georgian;
+    }
+
+    @media screen and (max-width: 480px) {
+        img {
+            width: 15%;
+            height: 90%;
+        }
+        .pie-de-pagina{
+            display: block;
+            
+            
+        }
+        
+    }
+
+
+
+}
