@@ -35,6 +35,11 @@ h4 {
   margin: 5px;
 }
 
+main .ventas2 img, main .ventas img {
+  width: 400px;
+  height: 400px;
+}
+
 header {
   background-color: rgba(233, 105, 0, 0.631372549);
   padding-top: 10px;
@@ -116,19 +121,20 @@ header .bar {
   }
   header .logoizq {
     width: 50px;
-    justify-content: center;
     position: absolute;
+    z-index: 1000;
   }
   header .logotipo {
     width: 100px;
     justify-content: center;
+    z-index: 1000;
   }
   header .navbar {
     width: 100vw;
     height: 50px;
     padding: 10px;
     margin-top: 30px;
-    z-index: 10000;
+    z-index: 500;
   }
   header .navbar ul {
     display: none;
@@ -143,6 +149,8 @@ header .bar {
   }
   header .menu-icon {
     display: flex;
+    position: absolute;
+    right: 20px;
   }
   header .menu-toggle:checked + .menu-icon + ul {
     display: flex;
@@ -195,13 +203,13 @@ main p {
   padding-top: 15px;
 }
 main .fotos-muestra {
-  width: 380px;
-  height: 380px;
   border: 4px;
-  display: flex;
   border-color: rgba(255, 60, 0, 0.7960784314);
   border-style: ridge;
   border-radius: 10%;
+  width: 380px;
+  height: 380px;
+  display: flex;
   margin: 10px;
 }
 main p {
@@ -221,16 +229,10 @@ main .ventas {
   padding-top: 10px;
 }
 main .ventas img {
-  width: 400px;
-  height: 400px;
   margin: 0px;
   z-index: 0;
 }
-main .producto {
-  object-fit: cover;
-  position: relative;
-}
-main .overlay {
+main .ventas .overlay {
   position: absolute;
   bottom: 0%;
   left: 0%;
@@ -239,6 +241,56 @@ main .overlay {
   height: 1%;
   overflow: hidden;
   transition: 1s ease;
+}
+main .ventas .producto {
+  object-fit: cover;
+  position: relative;
+}
+main .ventas2 {
+  /*contenedor de la seccion*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 3%;
+  min-height: 2000px;
+  justify-content: center;
+  align-items: center;
+}
+main .ventas2 img {
+  z-index: 0;
+  border-radius: 5%;
+  object-fit: cover;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+main .ventas2 img:hover {
+  opacity: 0.7;
+  filter: brightness(1.2);
+  /* Aumenta el brillo para aclarar la imagen */
+}
+main .ventas2 .producto {
+  /*contenedor de la imagen y el h2*/
+  border: 4px;
+  border-color: rgba(255, 60, 0, 0.7960784314);
+  border-style: ridge;
+  border-radius: 10%;
+  display: grid;
+  grid-template-rows: 2fr;
+  width: 500px;
+  padding: 5px;
+  margin: 2%;
+  background-color: gray;
+  justify-content: center;
+  align-items: center;
+}
+main .ventas2 .over {
+  /* texto explicativo*/
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+main .ventas2 .over:hover {
+  transform: translateY(-30px);
 }
 main .overlay h2 {
   font-size: 30px;
@@ -290,6 +342,13 @@ main .producto:hover .overlay {
   main .ventas p {
     margin: auto;
   }
+  main .ventas2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-items: center;
+    min-height: 3500px;
+    padding-left: 10%;
+  }
 }
 @media screen and (max-width: 480px) {
   main .container {
@@ -315,6 +374,18 @@ main .producto:hover .overlay {
     border-radius: 10%;
     margin: auto;
   }
+  main .ventas2 {
+    padding: 2px;
+    min-height: 3000px;
+  }
+  main .ventas2 img {
+    height: 300px;
+    width: 300px;
+  }
+  main .ventas2 .producto {
+    align-items: center;
+    width: 90vw;
+  }
 }
 
 .contactos {
@@ -326,9 +397,9 @@ main .producto:hover .overlay {
 }
 
 iframe {
-  width: 100%;
+  width: 100vw;
   height: 50%;
-  padding: 15px;
+  padding: 0%;
 }
 
 footer {
@@ -341,6 +412,7 @@ footer .pie-de-pagina {
 }
 footer .foot {
   padding: 10px;
+  z-index: 50;
 }
 footer a:hover {
   color: aliceblue;

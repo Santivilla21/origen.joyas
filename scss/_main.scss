@@ -42,13 +42,10 @@ main {
     }
 
     .fotos-muestra {
+        @include border-style(#ff3c00cb);
         width: 380px;
         height: 380px;
-        border: 4px;
         display: flex;
-        border-color: #ff3c00cb;
-        border-style: ridge;
-        border-radius: 10%;
         margin: 10px;
     }
 
@@ -70,34 +67,93 @@ main {
         padding-top: 10px;
 
         img {
-            width: 400px;
-            height: 400px;
+            @extend %image-style;
             margin: 0px;
             z-index: 0;
 
 
         }
 
+        .overlay {
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            background-color: #00ffbf4b;
+            width: 100%;
+            height: 1%;
+            overflow: hidden;
+            transition: 1s ease;
+
+
+        }
+
+        .producto {
+            object-fit: cover;
+            position: relative;
+        }
+
 
     }
 
-    .producto {
-        object-fit: cover;
-        position: relative;
+    .ventas2 {
+        /*contenedor de la seccion*/
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        gap: 2%;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 3%;
+        min-height: 2000px;
+        justify-content: center;
+        align-items: center;
+        img {
+            @extend %image-style;
+            z-index: 0;
+            border-radius: 5%;
+            object-fit: cover;
+            transition: opacity 0.3s ease, filter 0.3s ease;
+            
+        }
+
+        img:hover {
+            opacity: 0.7;
+            filter: brightness(1.2);
+            /* Aumenta el brillo para aclarar la imagen */
+        }
+
+
+
+        .producto {
+            /*contenedor de la imagen y el h2*/
+            @include border-style(#ff3c00cb);
+            display: grid;
+            grid-template-rows: 2fr;
+            width: 500px;        
+            padding: 5px;
+            margin: 2%;
+            background-color: gray;
+            justify-content:center;
+            align-items: center;
+
+
+        }
+
+        .over {
+            /* texto explicativo*/
+            padding: 5px;
+            transition: transform 0.3s ease;
+            
+        }
+
+        .over:hover {
+            transform: translateY(-30px);
+        }
+
     }
 
-    .overlay {
-        position: absolute;
-        bottom: 0%;
-        left: 0%;
-        background-color: #00ffbf4b;
-        width: 100%;
-        height: 1%;
-        overflow: hidden;
-        transition: 1s ease;
 
 
-    }
+
 
     .overlay h2 {
         font-size: 30px;
@@ -114,9 +170,12 @@ main {
         height: 100%;
         cursor: pointer;
     }
+    
+        
+    
 
     @media screen and (max-width:768px) {
-        
+
         .container {
 
             grid-template-columns: 1fr;
@@ -133,6 +192,7 @@ main {
             width: 1fr;
 
         }
+
         .fotos-muestra {
             width: 1fr;
             height: 380px;
@@ -143,6 +203,7 @@ main {
             border-radius: 10%;
             margin: auto
         }
+
         .ventas {
             display: flex;
             justify-content: center;
@@ -150,24 +211,34 @@ main {
             flex-wrap: wrap;
             gap: 30px;
             padding-top: 10px;
-    
+
             img {
                 width: 250px;
                 height: 250px;
                 align-items: center;
                 position: static;
-                
-    
-    
+
+
+
             }
-            p{
+
+            p {
                 margin: auto;
             }
-    
-    
+
+
         }
+        .ventas2{
+            grid-template-columns: 1fr;
+            gap: 0;
+            align-items: center;
+            min-height: 3500px;
+            padding-left: 10%;
+        }
+        
 
     }
+    
 
     @media screen and (max-width: 480px) {
         .container {
@@ -177,7 +248,7 @@ main {
         .flex-center {
             padding-left: 5%;
         }
-        
+
         .flex-center {
 
             grid-template-columns: 1fr;
@@ -187,6 +258,7 @@ main {
             width: 1fr;
 
         }
+
         .fotos-muestra {
             width: 1fr;
             height: 380px;
@@ -196,6 +268,18 @@ main {
             border-style: ridge;
             border-radius: 10%;
             margin: auto
+        }
+        .ventas2{
+            padding: 2px;
+            min-height: 3000px;
+            img{
+                height: 300px;
+                width: 300px;
+            }
+            .producto{
+                align-items: center;
+                width: 90vw;
+            }
         }
 
 
